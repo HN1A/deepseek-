@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الذكاء الاصطناعي المتكامل مع DeepSeek</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>تطبيق الذكاء الاصطناعي المتكامل مع DeepSeek</h1>
+            <p>أدخل النص الخاص بك واحصل على استجابة من نماذج DeepSeek للذكاء الاصطناعي</p>
+        </header>
+        
+        <main>
+            <form action="/generate" method="post">
+                <div class="form-group">
+                    <label for="user_input">أدخل سؤالك أو نصك:</label>
+                    <textarea id="user_input" name="user_input" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="model_name">اختر النموذج:</label>
+                    <select id="model_name" name="model_name">
+                        <option value="deepseek-chat">DeepSeek-V3 (نموذج المحادثة)</option>
+                        <option value="deepseek-reasoner">DeepSeek-R1 (نموذج التفكير المنطقي)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit">إرسال</button>
+                </div>
+            </form>
+        </main>
+        
+        <footer>
+            <p>تم تطويره باستخدام Flask و DeepSeek API &copy; 2025</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

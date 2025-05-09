@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتيجة الذكاء الاصطناعي - DeepSeek</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>نتيجة الذكاء الاصطناعي</h1>
+            <p>النموذج المستخدم: {{ model_name }}</p>
+        </header>
+        
+        <main>
+            <div class="result-container">
+                <div class="user-input">
+                    <h3>سؤالك:</h3>
+                    <p>{{ user_input }}</p>
+                </div>
+                
+                <div class="ai-response">
+                    <h3>إجابة الذكاء الاصطناعي:</h3>
+                    <div class="response-text">{{ generated_text | safe }}</div>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <a href="/" class="btn">محاولة جديدة</a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>تم تطويره باستخدام Flask و DeepSeek API &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
